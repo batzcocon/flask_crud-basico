@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}Editar Usuario{% endblock %}
+
+{% block content %}
+<h2 class="mb-4">Editar Usuario</h2>
+<form action="/actualizar/{{ id }}" method="POST" class="border p-4 bg-white rounded shadow-sm">
+    <div class="mb-3">
+        <label class="form-label">Nombre:</label>
+        <input type="text" name="nombre" class="form-control" value="{{ nombre }}" required>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Edad:</label>
+        <input type="number" name="edad" class="form-control" value="{{ edad }}" required>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Correo:</label>
+        <input type="email" name="correo" class="form-control" value="{{ correo }}" required>
+    </div>
+
+    <button type="submit" class="btn btn-success">Guardar Cambios</button>
+    <a href="/usuarios" class="btn btn-secondary ms-2">Cancelar</a>
+</form>
+{% endblock %}
